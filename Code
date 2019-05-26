@@ -1,0 +1,94 @@
+import UIKit
+
+// Classes name are declared wiht a capital letter!
+// Below we are declaring a Zombie in a game, so the class with the stats are declared below!
+// we also have the function kill inside our class, to kill the zombie, say when the player shoots it in a game
+// Making the game verify is the Zombie is strong is the isStrong function we have added below, and this shows is our zombie is classified as strong or not
+// Also we added to see if the Zombie is a boss monster if the strenght is more than 50.
+
+class Zombie {
+    
+    var isAlive = true
+    
+    var strength = 9
+    
+    func kill() {
+        
+        isAlive = false
+        
+    }
+    
+    func isStrong() -> Bool{
+        
+        if strength > 12 {
+            
+            return true
+            
+        } else {
+            
+            return false
+            
+        }
+        
+    }
+    
+    func  isBossMonster() -> Bool {
+        
+        if strength >= 50 {
+            
+            return true
+            
+        } else {
+            
+            return false
+            
+        }
+        
+    }
+    
+}
+
+// Creating our Zombies from the default value above.
+var zombie1 = Zombie()
+var zombie2 = Zombie()
+var zombie3 = Zombie()
+var zombie4 = Zombie()
+
+// Checking the alive status or our zombie 1, checking is its still alive in play!
+print(zombie1.isAlive)
+
+// Now we want our Zombie 2 to gain double the strengh it had at the start, so we do what is written in our code below!
+
+zombie2.strength = zombie2.strength * 2
+// Print Zombie strength to the console
+print(zombie2.strength)
+
+// below is the command to kill Zombie number 2.
+
+zombie2.kill()
+// Checking if Zombie is dead!
+print(zombie2.isAlive)
+
+// making Zombie 1 the Boss and also a strong monster and then checking by printing to console!
+
+zombie1.strength = 100
+
+print(zombie1.isStrong())
+print(zombie1.isBossMonster())
+
+// Making zombie 3 Strong and checking if Zombie 2 was Strong before it died.
+// Also maing sure onl zombie 1 is the Boss Zombie as it should be!
+
+zombie3.strength = 20
+// Strong and Boss.
+print(zombie1.isStrong())
+print(zombie1.isBossMonster())
+// Strong, not boss but dead.
+print(zombie2.isStrong())
+print(zombie2.isBossMonster())
+// Strong but not Boss.
+print(zombie3.isStrong())
+print(zombie3.isBossMonster())
+// Not Strong and not boss.
+print(zombie4.isStrong())
+print(zombie4.isBossMonster())
